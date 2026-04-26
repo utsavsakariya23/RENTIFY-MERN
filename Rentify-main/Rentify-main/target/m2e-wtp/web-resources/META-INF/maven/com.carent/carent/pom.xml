@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.carent</groupId>
+  <artifactId>carent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>Car Renting Service</name>
+  <description>Car renting web application using Maven</description>
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <spring.version>6.1.6</spring.version>
+  </properties>
+<dependencies>
+	<!-- JSTL API -->
+	<dependency>
+		<groupId>jakarta.servlet.jsp.jstl</groupId>
+		<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+		<version>3.0.0</version>
+	</dependency>
+	<!-- JSTL Implementation -->
+	<dependency>
+		<groupId>org.glassfish.web</groupId>
+		<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+		<version>3.0.1</version>
+	</dependency>
+	<!--jakarta jsp -->
+	<dependency>
+		<groupId>jakarta.servlet.jsp</groupId>
+		<artifactId>jakarta.servlet.jsp-api</artifactId>
+		<version>3.1.1</version>
+		<scope>provided</scope>
+	</dependency>
+	<!-- Servlet API (Tomcat provides it) -->
+	<dependency>
+		<groupId>jakarta.servlet</groupId>
+		<artifactId>jakarta.servlet-api</artifactId>
+		<version>6.0.0</version>
+		<scope>provided</scope>
+	</dependency>
+	<!-- PostgreSQL Driver -->
+	<dependency>
+		<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<version>42.7.3</version>
+	</dependency>
+	<!-- Spring JDBC -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<!-- HikariCP Connection Pool -->
+	<dependency>
+		<groupId>com.zaxxer</groupId>
+		<artifactId>HikariCP</artifactId>
+		<version>5.1.0</version>
+	</dependency>
+	<!-- Jakarta Mail (JavaMail) -->
+	<dependency>
+		<groupId>com.sun.mail</groupId>
+		<artifactId>jakarta.mail</artifactId>
+		<version>2.0.1</version>
+	</dependency>
+	<!-- Razorpay -->
+	<dependency>
+		<groupId>com.razorpay</groupId>
+		<artifactId>razorpay-java</artifactId>
+		<version>1.4.6</version>
+	</dependency>
+	<!-- org.json for Razorpay -->
+	<dependency>
+		<groupId>org.json</groupId>
+		<artifactId>json</artifactId>
+		<version>20231013</version>
+	</dependency>
+	<!-- Cloudinary SDK -->
+	<dependency>
+		<groupId>com.cloudinary</groupId>
+		<artifactId>cloudinary-http44</artifactId>
+		<version>1.36.0</version>
+	</dependency>
+	<!-- Gson for JSON -->
+	<dependency>
+		<groupId>com.google.code.gson</groupId>
+		<artifactId>gson</artifactId>
+		<version>2.10.1</version>
+	</dependency>
+	<!-- SLF4J for HikariCP logging -->
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-simple</artifactId>
+		<version>2.0.12</version>
+	</dependency>
+</dependencies>
+<build>
+	<plugins>
+		<plugin>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>3.4.0</version>
+		</plugin>
+	</plugins>
+</build>
+</project>

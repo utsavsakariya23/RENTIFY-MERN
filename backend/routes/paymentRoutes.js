@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const { createOrder, verifyPayment, refundPayment } = require('../controllers/PaymentController');
+const { protect, admin } = require('../middlewares/auth');
+
+router.post('/create-order', protect, createOrder);
+router.post('/verify', protect, verifyPayment);
+router.post('/refund/:bookingId', protect, admin, refundPayment);
+
+module.exports = router;

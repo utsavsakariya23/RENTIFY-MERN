@@ -1,0 +1,419 @@
+
+/*------------------------Scroll bar--------------------------*/
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d9d9d7;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffb400;
+}
+a:hover{     /*change mouse fourcus color to yellow in menu*/
+    color: #ffb400;
+    font-weight: bold;
+
+}
+
+
+#loginSection {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 31;
+    height: 400px;
+    top: 30vh;
+    background: white;
+    width: 800px;
+    border-radius: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    display: none;
+}
+
+#closeWindowInLogin{
+    position: relative;
+    left: 750px;
+}
+
+header{
+    position: fixed;
+}
+
+
+header>nav>div>ul{
+    position: relative;
+    left: 40vw;
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    margin: 0 30px;
+}
+
+#mainCarPng{
+    width: 550px;
+    height: 350px;
+    position: relative;
+    left: 10px;
+    top: 200px;
+}
+
+#mainClassDiv{
+    position: absolute;
+    left: 35%;
+    bottom: 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    /*color: white;*/
+}
+
+#mainClassDiv>h1:nth-child(1){  /*CAR RENTAL*/
+    font-size: 150px;
+    font-family: fantasy;
+    opacity: 20%;
+}
+
+#mainClassDiv>h2:nth-child(2){  /*car rental*/
+    font-size: 130px;
+    font-family: sans-serif;
+    position: relative;
+    bottom: 110px;
+}
+
+#mainClassDiv>h3:nth-child(3) { /*HELPS YOU_____*/
+     position: relative;
+    top: -10%;
+    color: #0055ff;
+}
+
+                    /*about us*/
+
+main>section:nth-child(2) {
+    position: relative;
+    top: 60vh;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+main>section:nth-child(2)>div:nth-child(2){
+    position: relative;
+    top: 100px;
+
+}
+
+main>section:nth-child(2)>div:nth-child(2)>section {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+main>section:nth-child(2)>div:nth-child(2)>section>aside {
+    width: 300px;
+    height: 150px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 5px;
+    transition: all 2s;
+    position: relative;
+
+}
+
+#OUR_SERVICE{
+    font-family: fantasy;
+    font-size: 60px;
+    opacity: 20%;
+    bottom: 20px;
+    position: relative;
+
+}
+
+#our_servicee{
+    font-family: sans-serif;
+    font-size: 47px;
+    position: relative;
+    top: 20px;
+    left: 25px;
+
+}
+
+main>section:nth-child(2)>div:nth-child(2)>section>aside>div {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 20px;
+    bottom: 30px;
+    gap: 20px;
+}
+
+main>section:nth-child(2)>div:nth-child(2)>section>aside>h6{
+
+    position: absolute;
+    top: 100px;
+    left: 25px;
+}
+
+main>section:nth-child(2)>div:nth-child(2)>section>aside>div>h5 {
+    position: relative;
+    top: 15px;    font-family: fantasy;
+
+}
+
+                            /* our vehicles */
+
+
+#mainDivInOverVehicle{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+
+main>section:nth-child(3) {
+    position: relative;
+    top: 100vh;
+    height: 130vh;
+}
+
+main>section:nth-child(3)>aside:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+
+}
+
+#our_vehicless{
+    position: relative;
+    font-family: sans-serif;
+    font-size: 47px;
+    left: 25px;
+}
+
+#OUR_VEHICLES{
+    position: relative;
+    font-family: fantasy;
+    font-size: 60px;
+    opacity: 20%;
+    bottom: 45px;
+}
+
+/*.mainDiv{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.carNames>h1{*/
+/*    background: #0a53be;*/
+/*    padding: 10px;*/
+/*}*/
+
+/*.detailsDiv>div{*/
+/*    display: flex;*/
+/*    gap: 15px;*/
+/*    border: 1px solid;*/
+/*    font-family: 'Poppins';*/
+/*    padding-left: 20px;*/
+/*    padding-right: 20px;*/
+/*}*/
+
+
+#carDetails{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#carDetails>aside>div{
+    display: inline-block;
+    position: relative;
+    margin-left: 90px;
+    bottom: 100px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 100%;
+}
+
+.ovrVehicleClass{   /*ovrVehicleClass*/
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 46vw;
+    top: 100px;
+}
+
+#carDetails>aside>h6 {
+    position: absolute;
+    display: flex;
+    top: 10px;
+    margin-left: 100px;
+}
+
+.ovrVehicleClass>h1{
+    font-family: fantasy;
+    font-size: 50px;
+}
+
+
+                                        /*search Car*/
+
+.searchCar{
+    position: relative;
+    top: 350px;
+    margin: 100px;
+}
+.searchButton{
+    margin-bottom: 10px
+}
+
+                                        /*register*/
+
+
+
+main>section:nth-child(4) {
+    position: relative;
+    top: 130vh;
+}
+
+
+main>section:nth-child(4)>div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#REGISTERR{
+    font-family: fantasy;
+    font-size: 60px;
+    opacity: 20%;
+    bottom: 20px;
+    position: relative;
+    right: 10%;
+
+}
+
+#register{
+    position: relative;
+    font-family: sans-serif;
+    font-size: 47px;
+    left: 10%;
+}
+
+main>section:nth-child(4)>div:nth-child(2) {
+    position: relative;
+    top: 150px;
+}
+
+#btnReg{
+    position: relative;
+    left: 90%;
+    top: 30px;
+}
+
+
+#footer{
+    position: relative;
+    top: 160vh;
+}
+
+
+
+
+/*pop up screen*/
+
+.registrationModal{
+    max-width: 1100px;
+    margin: auto;
+    display: none;
+    position: absolute;
+    top: 10vh;
+    z-index: 10;
+    background: transparent;
+    left: 0;
+    right: 0;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+}
+
+.registrationModal:target {
+    display: block;
+}
+
+/* Styling when #btnPopUp is active */
+#btnPopUp:active {
+    /* Define your styles for an active state here */
+    display: block;
+}
+
+
+#innerDiv{
+    max-width: 1000px;
+    background: #ffffff;
+
+
+}
+
+.popUpImg{
+
+    width: 250px;
+    height: 200px;
+    align-items: center;
+    display: flex;
+}
+
+.popImgContainer{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+
+
+
+/*footer*/
+
+footer{
+    position: relative;
+    top: 170vh;
+}
+
+
+
+/* Generic theme helpers for cards / headers */
+.theme-card-header {
+    background: #111111;
+    color: #ffffff;
+    border-bottom: 3px solid #ffb400;
+}
+
+.btn-theme {
+    background-color: #111111;
+    border-color: #111111;
+}
+
+.btn-theme:hover {
+    background-color: #333333;
+    border-color: #333333;
+}
+
+
