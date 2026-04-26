@@ -1,12 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Helper: extract the first image URL from potentially nested arrays
+const getFirstImage = (imageUrl) => {
+  if (!imageUrl) return '/assets/img/car.png';
+  if (typeof imageUrl === 'string') return imageUrl;
+  if (Array.isArray(imageUrl)) {
+    // Recursively dig into nested arrays until we find a string
+    for (const item of imageUrl) {
+      const result = getFirstImage(item);
+      if (result && result !== '/assets/img/car.png') return result;
+    }
+  }
+  return '/assets/img/car.png';
+};
+
 const CarCard = ({ car }) => {
   return (
     <div className="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-modern">
       <div className="position-relative">
         <img 
-          src={(Array.isArray(car.image_url) ? car.image_url[0] : car.image_url) || '/assets/img/car.png'} 
+          src={getFirstImage(car.image_url)} 
           className="card-img-top" 
           alt={car.name}
           style={{ height: '220px', objectFit: 'cover' }}

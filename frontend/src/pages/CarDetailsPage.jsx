@@ -3,6 +3,33 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import API from '../services/api';
 import { useAuth } from '../context/AuthContext';
 
+// Helper: extract the first image URL from potentially nested arrays
+const getFirstImage = (imageUrl) => {
+  if (!imageUrl) return '/assets/img/car.png';
+  if (typeof imageUrl === 'string') return imageUrl;
+  if (Array.isArray(imageUrl)) {
+    for (const item of imageUrl) {
+      const result = getFirstImage(item);
+      if (result && result !== '/assets/img/car.png') return result;
+    }
+  }
+  return '/assets/img/car.png';
+};
+
+// Helper: flatten all image URLs from potentially nested arrays
+const getAllImages = (imageUrl) => {
+  if (!imageUrl) return [];
+  if (typeof imageUrl === 'string') return [imageUrl];
+  if (Array.isArray(imageUrl)) {
+    const results = [];
+    for (const item of imageUrl) {
+      results.push(...getAllImages(item));
+    }
+    return results;
+  }
+  return [];
+};
+
 const CarDetailsPage = () => {
   const { id } = useParams();
   const [car, setCar] = useState(null);
@@ -51,27 +78,30 @@ const CarDetailsPage = () => {
         <div className="col-lg-7 mb-4">
           <div className="card border-0 shadow-sm rounded-4 overflow-hidden mb-3">
             <img 
-              src={(Array.isArray(car.image_url) ? car.image_url[activeImage] : car.image_url) || '/assets/img/car.png'} 
+              src={getAllImages(car.image_url)[activeImage] || getFirstImage(car.image_url)} 
               alt={car.name} 
               className="w-100 object-fit-cover shadow-sm transition-fade" 
               style={{ maxHeight: '500px', height: '400px', width: '100%' }}
             />
           </div>
           {/* Thumbnails */}
-          {Array.isArray(car.image_url) && car.image_url.length > 1 && (
-            <div className="d-flex gap-2 overflow-auto pb-2 custom-scrollbar">
-              {car.image_url.map((img, index) => (
-                <div 
-                  key={index} 
-                  className={`rounded-3 border-2 cursor-pointer transition-all ${activeImage === index ? 'border-primary' : 'border-transparent'}`}
-                  style={{ width: '80px', height: '60px', flexShrink: 0 }}
-                  onClick={() => setActiveImage(index)}
-                >
-                  <img src={img} alt={`${car.name} ${index}`} className="w-100 h-100 object-fit-cover rounded-2" />
-                </div>
-              ))}
-            </div>
-          )}
+          {(() => {
+            const images = getAllImages(car.image_url);
+            return images.length > 1 ? (
+              <div className="d-flex gap-2 overflow-auto pb-2 custom-scrollbar">
+                {images.map((img, index) => (
+                  <div 
+                    key={index} 
+                    className={`rounded-3 border-2 cursor-pointer transition-all ${activeImage === index ? 'border-primary' : 'border-transparent'}`}
+                    style={{ width: '80px', height: '60px', flexShrink: 0 }}
+                    onClick={() => setActiveImage(index)}
+                  >
+                    <img src={img} alt={`${car.name} ${index}`} className="w-100 h-100 object-fit-cover rounded-2" />
+                  </div>
+                ))}
+              </div>
+            ) : null;
+          })()}
         </div>
 
         {/* Car Details Info */}

@@ -12,8 +12,8 @@ const { protect, admin } = require('../middlewares/auth');
 router.get('/admin/stats', protect, admin, getAdminStats);
 router.get('/admin/recent', protect, admin, getRecentBookings);
 
-// Coupon suggestions (public or private, placed before /:id)
-router.get('/coupons/suggestions', getSuggestedCoupons);
+// Coupon suggestions (logged-in users only, placed before /:id)
+router.get('/coupons/suggestions', protect, getSuggestedCoupons);
 
 // Customer routes
 router.get('/my', protect, getMyBookings);

@@ -7,14 +7,16 @@ const {
   addCityPoint, 
   deleteCityPoint 
 } = require('../controllers/CityPointController');
-// Import middleware for auth if needed, but for now I'll just define the routes
-// Assuming there's a middleware to check if user is admin
-// const { protect, admin } = require('../middleware/authMiddleware');
+const { protect, admin } = require('../middlewares/auth');
 
+// Public routes
 router.get('/', getAllCityPoints);
 router.get('/cities', getCities);
 router.get('/points/:city', getPointsByCity);
-router.post('/', addCityPoint); // Should be protected by admin middleware in a real app
-router.delete('/:id', deleteCityPoint); // Should be protected by admin middleware in a real app
+
+// Admin-only routes
+router.post('/', protect, admin, addCityPoint);
+router.delete('/:id', protect, admin, deleteCityPoint);
 
 module.exports = router;
+
